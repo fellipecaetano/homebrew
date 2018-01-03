@@ -11,7 +11,7 @@ class Ahgora < Formula
 
   def install
     libexec.install Dir["*"]
-    system "npm", "install", *Language::Node.local_npm_install
+    system "npm", "install", *Language::Node.local_npm_install_args
     (bin/"ahgora").write_env_script "#{libexec}/index.js", :PREFIX => HOMEBREW_PREFIX
   end
 end
